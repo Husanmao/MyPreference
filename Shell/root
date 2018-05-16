@@ -1,0 +1,18 @@
+#!/usr/bin/expect
+
+###########################################################
+#	自动切换成root用户
+#	使用步骤:
+#		1.修改脚本中的root_passwd为root密码
+#		2.将root放入~/bin或者其他目录(包含在path中)
+#		3.chmod u+x {path_to_script}/root赋予脚本可执行权限
+#		4.重启shell窗口即可通过root命令切换到root
+###########################################################
+
+spawn sudo -i
+
+expect ":" {
+	send "root_passwd\r"
+}
+
+interact
