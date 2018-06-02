@@ -275,6 +275,6 @@ map <F8> :TagbarToggle<CR>
 Plugin 'git://github.com/scrooloose/nerdtree.git'
 
 " autoload needtree
-autocmd vimenter * NERDTree
+"autocmd vimenter * NERDTree
 ""当NERDTree为剩下的唯一窗口时自动关闭
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
