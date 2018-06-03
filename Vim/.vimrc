@@ -209,31 +209,24 @@ vnoremap $e <esc>`>a"<esc>`<i"<esc>
 
 " 单键<F7>控制syntax on/off。原因是有时候颜色太多会妨碍阅读。
 
+map <F4> :w<CR>:!python %<CR>
+" <F4> 运行python程序
 
 map <F5> :call CompileRunGcc()<CR>
 
 func! CompileRunGcc()
-
-exec "w"
-
-exec "!javac %"
-
-exec "!java -Xms512m -Xmx1024m %<"
-
+	exec "w"
+	exec "!javac %"
+	exec "!java -Xms512m -Xmx1024m %<"
 endfunc
 
 " <F5>编译和运行C程序
 
 map <F6> :call CompileRunGpp<CR>
-
 func! CompileRunGpp()
-
-exec "w"
-
-exec "!g++ % -o %<"
-
-exec "! ./<"
-
+	exec "w"
+	exec "!g++ % -o %<"
+	exec "! ./<"
 endfunc
 
 " <F6>编译和运行C++程序
@@ -245,6 +238,20 @@ au BufWrite /private/tmp/crontab.* set nowritebackup
 " Don't write backup file if vim is being called by "chpass"
 
 au BufWrite /private/etc/pw.* set nowritebackup
+
+" 当新建 .h .c .hpp .cpp .mk .sh等文件时自动调用SetTitle 函数  
+autocmd BufNewFile *.py,*.sh exec ":call MySetTitle()"  
+func MySetTitle()
+	if &filetype == 'sh'
+		call setline(1, "#!/usr/bin/env bash")
+		call setline(2, "")
+	else
+		call setline(1, "#!/usr/bin/env python")
+		call setline(2, "#-*- coding:utf-8 -*-")
+		call setline(3, "")
+	endif
+endfunc
+
 
 "==========="
 "Bundle插件"
@@ -273,7 +280,7 @@ map <F8> :TagbarToggle<CR>
 "Plugins"
 "=========="
 Plugin 'git://github.com/scrooloose/nerdtree.git'
-
+let NERDTreeWinPos=1
 " autoload needtree
 "autocmd vimenter * NERDTree
 ""当NERDTree为剩下的唯一窗口时自动关闭
