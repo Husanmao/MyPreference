@@ -93,7 +93,12 @@ alias ..4='cd ../../../../'
 alias ..5='cd ../../../../../'
 alias moe='cd ~/Study/Python/moe'
 alias py='python'
-alias stu='cd ~/Study'
+alias stu='cd ~/PycharmProjects/Study'
+alias py='python3'
+alias md='mkdir `date +%Y-%m-%d`'
+
+#alias for mysql
+alias ms='mysql.server start'
 
 #alias for git
 alias gt='git status .'
@@ -104,4 +109,5 @@ SCALA_HOME=/Users/colin/Library/scala-2.12.4
 SPARK_HOME=/Users/colin/Library/spark-2.2.1-bin-hadoop2.7
 MYSQL_HOME=/usr/local/mysql
 PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.7/site-packages
+export TERM=xterm-256color
 export PATH=~/Bin:/usr/local/bin:$MYSQL_HOME/bin:$SPARK_HOME/bin:$SCALA_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PATH
