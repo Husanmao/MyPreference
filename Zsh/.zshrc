@@ -52,9 +52,32 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git autojump osx brew node npm)
+plugins=(git osx brew node npm z zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
+
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
+ZSH_HIGHLIGHT_STYLES[default]=none
+ZSH_HIGHLIGHT_STYLES[unknown-token]=fg=red,bold
+ZSH_HIGHLIGHT_STYLES[reserved-word]=fg=green
+ZSH_HIGHLIGHT_STYLES[alias]=none
+ZSH_HIGHLIGHT_STYLES[builtin]=none
+ZSH_HIGHLIGHT_STYLES[function]=none
+ZSH_HIGHLIGHT_STYLES[command]=none
+ZSH_HIGHLIGHT_STYLES[precommand]=none
+ZSH_HIGHLIGHT_STYLES[commandseparator]=none
+ZSH_HIGHLIGHT_STYLES[hashed-command]=none
+ZSH_HIGHLIGHT_STYLES[path]=none
+ZSH_HIGHLIGHT_STYLES[globbing]=none
+ZSH_HIGHLIGHT_STYLES[history-expansion]=fg=blue
+ZSH_HIGHLIGHT_STYLES[single-hyphen-option]=none
+ZSH_HIGHLIGHT_STYLES[double-hyphen-option]=none
+ZSH_HIGHLIGHT_STYLES[back-quoted-argument]=none
+ZSH_HIGHLIGHT_STYLES[single-quoted-argument]=fg=yellow
+ZSH_HIGHLIGHT_STYLES[double-quoted-argument]=fg=yellow
+ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]=fg=cyan
+ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]=fg=cyan
+ZSH_HIGHLIGHT_STYLES[assign]=none
 
 # User configuration
 
@@ -94,8 +117,8 @@ alias ..5='cd ../../../../../'
 alias moe='cd ~/Study/Python/moe'
 alias py='python'
 alias stu='cd ~/PycharmProjects/Study'
-alias py='python3'
 alias md='mkdir `date +%Y-%m-%d`'
+alias ct='ctags -R --languages=c++,c,java,Make,Sh, --c++-kinds=+px --fields=+aiKSz --extra=+q'
 
 #alias for mysql
 alias ms='mysql.server start'
@@ -104,6 +127,12 @@ alias ms='mysql.server start'
 alias gt='git status .'
 alias gp='git pull origin master'
 
+bindkey '^ ' autosuggest-accept
+
+# for oh-my-zsh
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+
+# path setting
 HADOOP_HOME=/usr/local/Cellar/hadoop/2.8.2
 SCALA_HOME=/Users/colin/Library/scala-2.12.4
 SPARK_HOME=/Users/colin/Library/spark-2.2.1-bin-hadoop2.7
