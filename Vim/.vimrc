@@ -45,11 +45,12 @@ hi PmenuSel ctermfg=7 ctermbg=4 guibg=#555555 guifg=#ffffff
 "==================自定义的键映射======================
 
 let g:mapleader=","
-noremap <leader>q :q<CR>
-noremap <leader>h :%!xxd<CR>
-noremap <leader>s :set invlist<CR>
-noremap <leader>n :set nolist<CR>
-noremap <leader>r :%retab!<CR>
+nnoremap <leader>q :q<CR>
+nnoremap <leader>h :%!xxd<CR>
+nnoremap <leader>s :set invlist<CR>
+nnoremap <leader>n :set nolist<CR>
+nnoremap <leader>r :%retab!<CR>
+nnoremap <C-o> <C-T>
 
 "============"
 "多窗口操作"
@@ -132,7 +133,12 @@ vmap V <Plug>(expand_region_shrink)
 let g:tagbar_ctags_bin='/usr/local/bin/ctags'    "设置tagbar使用的ctags的插件,必须要设置对
 let g:tagbar_width=30                            "设置tagbar的窗口宽度
 let g:tagbar_left=0                              "设置tagbar的窗口显示的位置,为左边
-nnoremap <F8> :TagbarToggle<CR>                  "映射tagbar的快捷键
+nnoremap <F8> :TagbarToggle<CR>
+
+" for ctags
+let Tlist_Ctags_Cmd="/usr/local/bin/ctags"
+set tags=./tags,./TAGS,tags;~,TAGS;~
+set tags+="~/Study/Java/java-se-9-ri/jdk-9/lib/src/tags"
 
 " for nerdtree
 let NERDTreeWinPos=0
