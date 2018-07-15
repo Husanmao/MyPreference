@@ -1,15 +1,15 @@
 [user]
-	name = hudongfeng
-	email = 2268897104colinhu@gmail.com
+    name = hudongfeng
+    email = 2268897104colinhu@gmail.com
 [core]
-	editor = vim
-	autocrlf = input
+    editor = vim
+    autocrlf = input
 [merge]
-	tool = vimdiff
+    tool = vimdiff
 [alias]
-	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
-	lms = log --no-merges --color --stat --date=format:'%Y-%m-%d %H:%M:%S' --author='hudongfeng' --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Cblue %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit
-	lss = log --no-merges --color --stat --graph --date=format:'%Y-%m-%d %H:%M:%S' --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Cblue %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+    lms = log --no-merges --color --stat --date=format:'%Y-%m-%d %H:%M:%S' --author='hudongfeng' --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Cblue %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit
+    lss = log --no-merges --color --stat --graph --date=format:'%Y-%m-%d %H:%M:%S' --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Cblue %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit
 [github]
-	user = 2268897104colinhu@gmail.com
-	token = 9d938d7529eeb797760421f349a15384b8ba0853
+    user = 2268897104colinhu@gmail.com
+    token = 9d938d7529eeb797760421f349a15384b8ba0853
