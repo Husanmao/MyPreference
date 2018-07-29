@@ -119,6 +119,7 @@ alias py='python'
 alias stu='cd ~/PycharmProjects/Study'
 alias md='mkdir `date +%Y-%m-%d`'
 alias ct='ctags -R --languages=c++,c,java,Make,Sh, --c++-kinds=+px --fields=+aiKSz --extra=+q'
+alias f='find . -name'
 
 #alias for mysql
 alias ms='mysql.server start'
